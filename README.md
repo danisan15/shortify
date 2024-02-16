@@ -12,8 +12,22 @@ Shortify is a URL shortener project that provides a simple and convenient way to
 
 The following environment variables need to be set:
 
-- `VITE_API_BASE_URL`: The base URL for the API endpoint.
-- `VITE_REDIRECT_URL`: The URL where users will be redirected after accessing a shortened link.
+## Frontend
+PUBLIC_API_URL: This variable represents the public API URL used by the frontend.
+PUBLIC_GET_URL: This variable represents the public URL for retrieving data in the frontend.
+PUBLIC_RESULT_URL: This variable represents the public URL for displaying results in the frontend.
+PUBLIC_ERROR_URL: This variable represents the public URL for displaying errors in the frontend.
+
+## Backend
+DOMAIN_URL: This variable represents the domain URL of the backend server.
+DB_URL: This variable represents the URL of the database used by the backend.
+DB_PASSWORD: This variable represents the password for accessing the database.
+DB_USER: This variable represents the username for accessing the database.
+
+## Redirect
+VITE_FETCH_URL: This variable represents the URL used for fetching data in the redirect project.
+VITE_ERROR_URL: This variable represents the URL for displaying errors in the redirect project.
+VITE_HOME_URL: This variable represents the URL for the home page of the redirect project.
 
 ## Deployment
 
