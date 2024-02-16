@@ -1,0 +1,99 @@
+html {
+    background-color: rgb(0, 0, 0);
+    zoom: 120%;
+}
+
+#header-div{
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+
+    h1 {
+        color: rgb(0, 136, 0);
+    }
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+}
+
+.section-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 800px;
+    height: 15rem;
+    background-color: rgb(26, 26, 26);
+    border: 1px white solid;
+
+    h1 {
+        color: white;
+        font-size: 32px;
+    }
+
+    #url-field {
+        display: flex;
+    }
+
+    #url-input {
+        width: 25rem;
+        padding: 12px;
+        border-radius: 4px 0 0 4px;
+        margin-right: 0;
+    }
+
+    #shorten-btn {
+        padding: 12px;
+        width: 6rem;
+        font-size: 15px;
+        font-weight: bold;
+        color: white;
+        background-color: rgb(0, 136, 0);
+        border-radius: 0 4px 4px 0;
+        border: 0;
+        margin-left: 0;
+    }
+    #shorten-btn:hover {
+        cursor: pointer;
+    }
+
+    #shorten-btn:active {
+        transform: scale(.97);
+    }
+
+    #copy-btn {
+        padding: 12px;
+        width: 7rem;
+        font-size: 15px;
+        font-weight: bold;
+        color: white;
+        background-color: rgb(0, 136, 0);
+        border-radius: 0 4px 4px 0;
+        border: 0;
+        margin-left: 0;
+    }
+
+    #copy-btn:hover {
+        cursor: pointer;
+    }
+
+    #copy-btn:active {
+        transform: scale(.97);
+    }
+    
+    .url-text { 
+        width: 45rem;
+        text-align: center;
+        color: white;
+        font-weight: 500;
+        padding: 0 20px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+    
+    #long-url {
+        color: white;
+    }
+}
+

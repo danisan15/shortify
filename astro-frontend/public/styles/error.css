@@ -1,0 +1,37 @@
+html {
+    zoom: 100%;
+    background-color: rgb(0, 0, 0);
+}
+
+
+#header-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    flex-direction: column;
+    color: white;
+
+    h1 {
+        color: rgb(0, 136, 0);
+    }
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    color: white;
+    font-weight: 400;
+
+    span {
+        width: 30%;
+    }
+
+    .checkmark {
+        color: rgb(0, 136, 0);
+        font-weight: 900;
+    }
+}

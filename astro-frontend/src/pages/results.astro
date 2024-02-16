@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../../public/styles/index.css';
+---
+
+<Layout title='Shortify'>
+    <main>
+		<div id="header-div">
+			<h1>Shortify</h1>
+		</div>
+
+		<section class="box">
+			<div class="section-container">
+				<h1>Here is your URL!</h1>
+				<div id="url-field">
+					<input type="text" name="url" id="url-input" value="" readonly>
+                    <button id="copy-btn">Copy URL</button>
+				</div>
+				<div class="url-text">
+					<p>Long URL: 
+                        <a id="long-url" target='_blank'></a>
+                    </p>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<script>
+	const urlObject = JSON.parse(localStorage.getItem('url'));
+	const urlField = document.getElementById('url-input');
+	const copyBtn = document.getElementById('copy-btn');
+	const longUrl = document.getElementById('long-url');
+	
+	urlField.value = urlObject.shortenedUrl;
+	longUrl.href = localStorage.getItem('originalUrl');
+	longUrl.innerText = localStorage.getItem('originalUrl');
+	
+	const copyToClipboard = () => {
+		navigator.clipboard.writeText(urlField.value);
+		alert('Copied to clipboard');
+	}
+
+	copyBtn.addEventListener('click', copyToClipboard);
+	localStorage.removeItem('url');
+	localStorage.removeItem('originalUrl');
+	
+</script>

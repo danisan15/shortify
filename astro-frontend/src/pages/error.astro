@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../../public/styles/error.css';
+---
+
+<Layout title="Error 404">
+    <main>
+        <div id="header-div">
+			<h1>404</h1>
+            <h3>It seems like the URL doesn't exist</h3>
+		</div>
+
+        <div class="box">
+            <span><span class="checkmark">✔</span> Check if the domain is correct</span>
+            <span><span class="checkmark">✔</span> Check if the site is online</span>
+            <span><span class="checkmark">✔</span> Check the address bars and punctuation</span>
+            <span><span class="checkmark">✔</span> The URL may be being used for spam</span>
+            <span><span class="checkmark">✔</span> The URL may have been blocked</span>
+            <span><span class="checkmark">✔</span> The URL may have been reported</span>
+            <span><span class="checkmark">✔</span> The URL was recently shortened</span>
+            <span><span class="checkmark">✔</span> The URL is not allowed</span>
+            <span><span class="checkmark">✔</span> You shortened many URLs in a short time</span>
+        </div>
+    </main>
+</Layout>

@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../../public/styles/index.css';
+---
+
+<Layout title="Shortify">
+	<main>
+		<div id="header-div">
+			<h1>Shortify</h1>
+		</div>
+
+		<section class="box">
+			<div class="section-container">
+				<h1>Paste your URL!</h1>
+				<div id="url-field">
+					<input type="text" name="url" id="url-input" placeholder="https://www.example.com">
+					<button id="shorten-btn">Shorten</button>
+				</div>
+				<div class="url-text">
+					<p>Shortify is a free tool to shorten URLs and generate short links.
+						Shortify allows to create a shortened link making it easy to share
+					</p>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<script>
+	const url = import.meta.env.PUBLIC_API_URL;
+	const endpoint = url + '/shorten';
+
+	const sendUrl = (url) => {	
+		const urlRequest = {
+			method: 'POST',
+			header: {
+				'Accept': 'application/json',
+      			'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({url: url})
+		}
+
+		console.log(urlRequest.body)
+
+		fetch(endpoint, urlRequest)
+		.then(res => res.json())
+		.then(parsedRes => {
+			if(parsedRes.message){
+				window.location.href = import.meta.env.PUBLIC_ERROR_URL;
+			} else {
+				localStorage.setItem('url', JSON.stringify(parsedRes));
+				window.location.href = import.meta.env.PUBLIC_RESULT_URL;
+			}
+		})
+		.catch(err => console.error(err));
+	}
+
+	const handleClick = async (e) => {
+		const urlInput = document.getElementById('url-input');
+		const url = urlInput.value;
+		localStorage.setItem('originalUrl', url)
+
+		const data = await sendUrl(url);
+	}
+
+	const btn = document.getElementById('shorten-btn');
+
+
+	btn.addEventListener('click', handleClick);
+	
+</script>
